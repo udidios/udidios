@@ -1,0 +1,53 @@
+<html lang="ru">
+<head>
+<script>
+const tg_user_id = new URLSearchParams(window.location.search).get('tg_user_id');
+const url = 'https://api.telegram.org/bot5021692760:AAFP4REQhEq5n_8SD0g0JVxQCb6pIh6b0g4/GetChatMember';
+const data = new URLSearchParams({ chat_id: '-1001699696734', user_id: tg_user_id });
+
+const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: data.toString()
+};
+
+fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+        const status = data.result.status;
+        const user_id = encodeURIComponent(tg_user_id);
+        const creator = `https://udidios.github.io/udid/htm.htm`;
+        const administrator = `https://udidios.github.io/udid/htm.htm`;
+        const member = `https://udidios.github.io/udid/htm.htm`;
+        const left = `https://t.me/c/1733213073/5075`;
+        const kick = `https://t.me/piper_pied/281 `;
+
+        switch (status) {
+            case 'creator':
+                window.location.href = creator;
+                break;
+            case 'administrator':
+                window.location.href = administrator;
+                break;
+            case 'member':
+                window.location.href = member;
+                break;
+            case 'left':
+                window.location.href = left;
+                break;
+            default:
+                window.location.href = kick;
+        }
+    })
+    .catch(error => console.error('Error:', error));
+
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+</head>
+<body>
+    <div id="app">
+</body>
+</html>
