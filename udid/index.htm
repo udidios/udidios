@@ -47,15 +47,15 @@
    <p>Добро пожаловать!</p>
    <a class="link" href="https://pegakmop.t.me">Поддержка</a>
    <p class="hint">тестовый веб бот</p>
-   <button id="btn" class="button">Показать/Скрыть кнопку</button>
-   <button id="btnED" class="button">Разрешить/Запретить доступ</button>
+   <button id="btn" class="button">Показать📲/📵Скрыть кнопку</button>
+   <button id="btnED" class="button">Разрешить📲/📵Запретить доступ</button>
 
    <script>
       let tg = window.Telegram.WebApp;
       tg.expand();
 
       // Изменение параметров основной кнопки
-      tg.MainButton.setText("продолжить");
+      tg.MainButton.setText("⚠️разрешите доступ‼️");
       tg.MainButton.textColor = "#00ff00";
       tg.MainButton.color = "#00ff00";
       tg.MainButton.setParams({"color": "#000000"});
@@ -73,14 +73,14 @@
 
       let btnED = document.getElementById("btnED");
       btnED.addEventListener('click', function(){
-         if (tg.MainButton.isActive){ alert("функционал отключен");
+         if (tg.MainButton.isActive){ alert("функционал отключен 📵");
             tg.MainButton.setParams({"color": "#ff0000"});
-            tg.MainButton.setText("Отказано");
+            tg.MainButton.setText("Отказано 📵");
             tg.MainButton.disable() 
-         } else { alert("функционал включён");
+         } else { alert("функционал включён 📲");
             tg.MainButton.setParams({"color": "#000000"});
             tg.MainButton.textColor = "#00ff00";
-            tg.MainButton.setText("Продолжить");
+            tg.MainButton.setText("Продолжить 📲");
             tg.MainButton.enable()
          }
       });
