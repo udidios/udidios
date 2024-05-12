@@ -55,35 +55,12 @@
       tg.expand();
 
       // Изменение параметров основной кнопки
-      tg.MainButton.setText("⚠️разрешите доступ‼️");
+      tg.MainButton.setText("Продолжить");
       tg.MainButton.textColor = "#00ff00";
       tg.MainButton.color = "#00ff00";
       tg.MainButton.setParams({"color": "#000000"});
-      tg.MainButton.disable()
-
-      // Обработка событий кнопок
-      let btn = document.getElementById("btn");
-      btn.addEventListener('click', function(){
-         if (tg.MainButton.isVisible){
-            tg.MainButton.hide()
-         } else {
-            tg.MainButton.show()
-         }
-      });
-
-      let btnED = document.getElementById("btnED");
-      btnED.addEventListener('click', function(){
-         if (tg.MainButton.isActive){ alert("функционал отключен 📵");
-            tg.MainButton.setParams({"color": "#ff0000"});
-            tg.MainButton.setText("Отказано 📵");
-            tg.MainButton.disable() 
-         } else { alert("функционал включён 📲");
-            tg.MainButton.setParams({"color": "#000000"});
-            tg.MainButton.textColor = "#00ff00";
-            tg.MainButton.setText("Продолжить 📲");
-            tg.MainButton.enable()
-         }
-      });
+      tg.MainButton.enable()
+      tg.MainButton.show()
 
       // Обработка клика на основную кнопку
       Telegram.WebApp.onEvent('mainButtonClicked', function(){
@@ -92,11 +69,6 @@
          window.location.href = '/udid/?tg_user_id=' + tg.initDataUnsafe.user.id;
       });
 
-
-      // Обработка клика на второстепенную кнопку
-      Telegram.WebApp.offEvent('mainButtonClicked', function(){
-         alert("функционал недоступен");
-      });
 
       // Отображение информации о пользователе
       let usercard = document.getElementById("usercard");
@@ -111,7 +83,7 @@
       usercard.appendChild(userid);
 
       // Отображение фото пользователя (работает только в attachment menu)
-      //let pic = document.createElement('img');
+      //let pic = document.createElement('img'); 
       //pic.src = tg.initDataUnsafe.user.photo_url;
       //usercard.appendChild(pic);
    </script>
