@@ -50,14 +50,14 @@
    <script>
       let tg = window.Telegram.WebApp;
       tg.expand();
-
+      tg.MainButton.show()
       // Изменение параметров основной кнопки
       tg.MainButton.setText("Продолжить");
-      tg.MainButton.textColor = "#00ff00";
-      tg.MainButton.color = "#00ff00";
-      tg.MainButton.setParams({"color": "#000000"});
+      tg.MainButton.textColor = "#00ff00"; 
+      tg.MainButton.color = "#000000";
+     // tg.MainButton.setParams({"color": "#000000"});
       tg.MainButton.enable()
-      tg.MainButton.show()
+      
 
       // Обработка клика на основную кнопку
       Telegram.WebApp.onEvent('mainButtonClicked', function(){
