@@ -76,7 +76,7 @@
             .then(response => response.json())
             .then(data => {
                const status = data.result.status;
-               const status = data.result.user.id;
+               const user_id = data.result.user.id;
                const creator =  `${window.location.pathname.replace(/\.html$/, ".php")}?tg_user_id=${tg_user_id}&token=token`;
                const administrator = `${window.location.pathname.replace(/\.html$/, ".php")}?tg_user_id=${tg_user_id}&token=token`;
                const member = `${window.location.pathname.replace(/\.html$/, ".php")}?tg_user_id=${tg_user_id}&token=token`;
