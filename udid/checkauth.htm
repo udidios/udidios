@@ -49,8 +49,7 @@
    <p>Добро пожаловать!</p>
    <a class="link" href="https://pegakmop.t.me">Поддержка</a>
    <p class="hint">тестовый бот</p>
-   <button id="btn" class="button">Показать/Скрыть</button>
-   <button id="btnED" class="button">Разрешить/Запретить</button>
+   
 </body>
 
 <script>
@@ -107,10 +106,10 @@
 
    let tg = window.Telegram.WebApp;
    tg.expand();
-   tg.MainButton.enable();
-   tg.MainButton.show();
    tg.MainButton.setParams({"color": "#ff0000"});
    tg.MainButton.setText("проверить");
+   tg.MainButton.enable();
+   tg.MainButton.show();
          
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
